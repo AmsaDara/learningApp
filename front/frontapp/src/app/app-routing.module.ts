@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CalendarEventComponent } from './layout/calendar-event/calendar-event.component';
 import { CoursesComponent } from './layout/courses/courses.component';
 import { HomeComponent } from './layout/home/home.component';
-import { LayoutComponent } from './layout/layout.component'
+import { NavComponent } from './layout/nav/nav.component'
+import { NewsComponent } from './layout/news/news.component';
+import { ParticipantsComponent } from './layout/participants/participants.component';
+import { ProgressionBarComponent } from './layout/progression-bar/progression-bar.component';
 
 const routes: Routes = [
   {
@@ -12,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: LayoutComponent,
+    component: NavComponent,
     children: [
       {
         path: 'home',
@@ -21,9 +25,39 @@ const routes: Routes = [
       {
         path: 'courses',
         component: CoursesComponent
+      },
+      {
+        path: 'participants',
+        component: ParticipantsComponent
+      },
+      {
+        path: 'progress',
+        component: ProgressionBarComponent
+      },
+      
+    ]
+  },
+  {
+    path: '',
+    component: NavComponent,
+    children: [
+      {
+        path: 'annonces',
+        component: NewsComponent
       }
     ]
-  }
+  },
+  {
+    path: '',
+    component: NavComponent,
+    children: [
+      {
+        path: 'calendarevent',
+        component: CalendarEventComponent
+      }
+    ]
+  },
+  
 ];
 
 @NgModule({
@@ -31,3 +65,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

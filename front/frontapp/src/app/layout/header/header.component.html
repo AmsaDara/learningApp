@@ -9,9 +9,21 @@
       <mat-icon>person_pin</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="profil()">
+        <mat-icon>perm_identity</mat-icon>
+        <span>Profil</span>
+      </button>
+      <button mat-menu-item (click)="profil()">
+        <mat-icon>chat</mat-icon>
+        <span>Message Personel</span>
+      </button>
+      <button mat-menu-item (click)="profil()">
+        <mat-icon>note</mat-icon>
+        <span>Notes</span>
+      </button>
       <button mat-menu-item (click)="logout()">
         <mat-icon>logout</mat-icon>
         <span>Logout</span>
-      </button> 
+      </button>  
     </mat-menu>
   </mat-toolbar>

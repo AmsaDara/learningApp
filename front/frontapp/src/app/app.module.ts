@@ -10,31 +10,41 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { CoursesComponent } from './layout/courses/courses.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { HomeComponent } from './layout/home/home.component';
-import { LayoutComponent } from './layout/layout.component';
 import { MenuItemComponent } from './layout/menu-item/menu-item.component';
 import { PageHeaderComponent } from './layout/page-header/page-header.component';
+import { NavComponent } from './layout/nav/nav.component';
+import { NewsComponent } from './layout/news/news.component';
+import { RouterModule, Routes } from '@angular/router';
+import { ParticipantsComponent } from './layout/participants/participants.component';
+import { ProgressionBarComponent } from './layout/progression-bar/progression-bar.component';
+import { CalendarEventComponent } from './layout/calendar-event/calendar-event.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent,
+    NavComponent,
     HomeComponent,
     CoursesComponent,
     HeaderComponent,
     MenuItemComponent,
     PageHeaderComponent,
+    NewsComponent,
+    ParticipantsComponent,
+    ProgressionBarComponent,
+    CalendarEventComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    LayoutsModule,
     LayoutModule,
     MaterialModule,
+    LayoutsModule,
+    //RouterModule.forRoot(routes),
    
-  ],
+  ], 
   providers: [],
   bootstrap: [AppComponent]
 })

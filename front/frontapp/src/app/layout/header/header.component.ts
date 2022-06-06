@@ -16,6 +16,10 @@ export class HeaderComponent {
   logout(): void {
     console.log('Logged out');
   }
+  profil(): void {
+    console.log('Your identifiant ');
+    
+  }
   // // constructor() { }
 
   // // ngOnInit(): void {
