@@ -18,6 +18,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { ParticipantsComponent } from './layout/participants/participants.component';
 import { ProgressionBarComponent } from './layout/progression-bar/progression-bar.component';
 import { CalendarEventComponent } from './layout/calendar-event/calendar-event.component';
+import { RegisterComponent } from './student/register/register.component';
+import { SigninComponent } from './student/signin/signin.component';
+import { StudentBadgeComponent } from './student/student-badge/student-badge.component';
+import { StudentModule } from './student/student.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './student/jwt.interceptors';
 
 
 @NgModule({
@@ -32,7 +38,10 @@ import { CalendarEventComponent } from './layout/calendar-event/calendar-event.c
     NewsComponent,
     ParticipantsComponent,
     ProgressionBarComponent,
-    CalendarEventComponent
+    CalendarEventComponent,
+    RegisterComponent,
+    SigninComponent,
+    StudentBadgeComponent
   ],
   imports: [
     BrowserModule,
@@ -42,10 +51,13 @@ import { CalendarEventComponent } from './layout/calendar-event/calendar-event.c
     LayoutModule,
     MaterialModule,
     LayoutsModule,
+    //StudentModule,
     //RouterModule.forRoot(routes),
    
   ], 
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

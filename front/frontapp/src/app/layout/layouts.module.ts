@@ -10,6 +10,10 @@ import { NewsComponent } from './news/news.component';
 import { ParticipantsComponent } from './participants/participants.component';
 import { ProgressionBarComponent } from './progression-bar/progression-bar.component';
 import { CalendarEventComponent } from './calendar-event/calendar-event.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from '../shared/material/materials.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -33,7 +37,12 @@ import { CalendarEventComponent } from './calendar-event/calendar-event.componen
   ],
   imports: [
     CommonModule,
+    MaterialModule,
+    RouterModule,
+    ReactiveFormsModule,
+    HttpClientModule
     // MoviesModule
+    //StudentModule,
   ],
   exports:[
     // LayoutComponent,

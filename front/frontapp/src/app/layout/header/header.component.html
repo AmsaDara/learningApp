@@ -4,7 +4,13 @@
     </button>
     <span class="title" routerLink="/">Dashboard</span>
     <span class="spacer"></span>
-    <span class="welcome-text">{{ user }}</span>
+    <!-- <app-register></app-register>
+    <app-signin></app-signin> -->
+    <div class="lien">
+      <span class="title" routerLink="/register">Register</span>
+      <span class="title" routerLink="/signin">Sign In</span>
+    </div>
+    <span class="welcome-text">{{ currentStudent?.fullusername }}</span>
     <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>person_pin</mat-icon>
     </button>
@@ -21,6 +27,11 @@
         <mat-icon>note</mat-icon>
         <span>Notes</span>
       </button>
+      <!-- <div class="badge">
+        <p>{{userInfo.fullusername}}</p>
+        <i>{{userInfo.email}}</i>
+        <button mat-menu-item color="primary" (click)="logout()">Logout</button>
+      </div> -->
       <button mat-menu-item (click)="logout()">
         <mat-icon>logout</mat-icon>
         <span>Logout</span>

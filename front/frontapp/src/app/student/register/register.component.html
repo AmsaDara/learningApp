@@ -1,0 +1,43 @@
+<form [formGroup]="registerForm" novalidate>
+    <mat-card class="shipping-card">
+      <mat-card-header>
+        <mat-card-title>Please Register</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-icon color="primary" matPrefix>person</mat-icon>
+              <input matInput placeholder="Full Name" formControlName="fullusername" required>
+              <mat-error *ngIf="registerForm.controls['fullusername'].hasError('required')">
+                Full Name is required <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-icon color="primary" matPrefix>email</mat-icon>
+              <input type="email" matInput placeholder="email" formControlName="email" required>
+              <mat-error *ngIf="registerForm.controls['email'].hasError('required')">
+                email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-icon color="primary" matPrefix>locked</mat-icon>
+              <input type="password" matInput placeholder="password" formControlName="password" required>
+              <mat-error *ngIf="registerForm.controls['password'].hasError('required')">
+                Password is required <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Submit</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>

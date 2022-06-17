@@ -7,12 +7,22 @@ import { NavComponent } from './layout/nav/nav.component'
 import { NewsComponent } from './layout/news/news.component';
 import { ParticipantsComponent } from './layout/participants/participants.component';
 import { ProgressionBarComponent } from './layout/progression-bar/progression-bar.component';
+import { RegisterComponent } from './student/register/register.component';
+import { SigninComponent } from './student/signin/signin.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
     redirectTo: 'home'
+  },
+  {
+    path:'register',
+    component:RegisterComponent
+  },
+  {
+    path:'signin',
+    component:SigninComponent
   },
   {
     path: '',
