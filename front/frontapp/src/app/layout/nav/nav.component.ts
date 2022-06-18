@@ -44,7 +44,7 @@ export class NavComponent {
           icon: 'bar_chart',
           color: '#ff7f0e',
           link: '/progress'
-        }
+        },
       ]
     },
     {

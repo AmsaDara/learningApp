@@ -10,7 +10,7 @@ function generateMeAToken(student) {
         role: student.role,
         isGranted: student.isGranted,
     }, secretKey, {
-        expiresIn: '365d'
+        expiresIn: '24h'
     });
 }
 

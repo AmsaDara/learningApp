@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from '../shared/material/materials.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { ProfilComponent } from './profil/profil.component';
 
 
 
@@ -34,6 +35,8 @@ import { RouterModule } from '@angular/router';
     //ProgressionBarComponent
   
    // CalendarEventComponent
+  
+    //ProfilComponent
   ],
   imports: [
     CommonModule,

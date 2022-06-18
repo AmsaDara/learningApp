@@ -1,5 +1,7 @@
+import { state } from '@angular/animations';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IStudent } from './student.model';
@@ -11,7 +13,10 @@ export class AuthenticateService {
   private currentStudentSubject$: BehaviorSubject<IStudent>;
   public currentStudent$: Observable<IStudent>;
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private router: Router
+    ) {
     this.currentStudentSubject$ = new BehaviorSubject<IStudent>(JSON.parse(localStorage.getItem('currentStudent') as string));
     this.currentStudent$ = this.currentStudentSubject$.asObservable();
      }
@@ -39,6 +44,7 @@ export class AuthenticateService {
     //remove student for to local storage to log student out
     localStorage.removeItem('currentStudent');
     this.currentStudentSubject$.next({} as IStudent);
+    this.router.navigate([''])
     //document.location.reload(true);
     
   }

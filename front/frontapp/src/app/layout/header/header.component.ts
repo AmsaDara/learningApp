@@ -27,7 +27,8 @@ export class HeaderComponent implements OnInit{
   
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private authenticateService: AuthenticateService
+    private authenticateService: AuthenticateService,
+    private router: Router,
   ) { }
   
   ngOnInit(): void {
@@ -44,10 +45,11 @@ export class HeaderComponent implements OnInit{
 
   logout(){
     this.authenticateService.logout();
-    //this.Router.navigate(['signin']);
+    this.router.navigate(['signin']);
   }
   profil(): void {
-    console.log('Your identifiant ');
+    //console.log('Your identifiant ');
+    this.router.navigate(['/profil'])
     
   }
   

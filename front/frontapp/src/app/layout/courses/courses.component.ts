@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./courses.component.scss']
 })
 export class CoursesComponent implements OnInit {
-  course?: any;
+  courses?: any;
   courseToUpdate?:ICourse
   context : 'ADD' | 'UPDATE' = 'ADD'
   constructor(
@@ -22,9 +22,9 @@ export class CoursesComponent implements OnInit {
     this.courseService.getAllCourse().subscribe(data=>{
       if(data.status==="error"){
         this.snackBar.open(data.message,'x');
-        this.course=[];
+        this.courses=[];
       }else{
-        this.course=data.payload}
+        this.courses=data.payload}
       }
       )
   }
@@ -36,7 +36,7 @@ export class CoursesComponent implements OnInit {
 
   deleteCourse(course: ICourse) {
     this.courseService.removeCourse(course).subscribe(console.log)
-    this.courseService.getAllCourse().subscribe(data=>this.course=data)
+    this.courseService.getAllCourse().subscribe(data=>this.courses=data)
   }
 
 }

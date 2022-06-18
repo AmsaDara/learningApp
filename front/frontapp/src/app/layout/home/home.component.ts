@@ -15,7 +15,9 @@ export interface Tile {
 
 export class HomeComponent implements OnInit {
   user: String = 'Papa';
-  constructor() { }
+  constructor(
+    
+  ) { }
 
   ngOnInit(): void {
   }

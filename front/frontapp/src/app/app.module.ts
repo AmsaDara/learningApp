@@ -24,6 +24,7 @@ import { StudentBadgeComponent } from './student/student-badge/student-badge.com
 import { StudentModule } from './student/student.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './student/jwt.interceptors';
+import { ProfilComponent } from './layout/profil/profil.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { JwtInterceptor } from './student/jwt.interceptors';
     CalendarEventComponent,
     RegisterComponent,
     SigninComponent,
-    StudentBadgeComponent
+    StudentBadgeComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,
