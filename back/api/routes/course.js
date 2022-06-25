@@ -16,9 +16,10 @@ router.get('/allcourse',validateStudent, async function(req, res, next) {
 
 
 
-router.get('/nonfeatured', async function(req, res, next) {
+router.get('/:id', async function(req, res, next) {
+  console.log(req.params.id);
     try {
-        let response = await courseService.getNonFeatureCourse();
+        let response = await courseService.courseId(req.params.id);
         res.json(response);
       } catch (error) {
         next(error)

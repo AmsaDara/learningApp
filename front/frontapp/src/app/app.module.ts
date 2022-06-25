@@ -25,6 +25,9 @@ import { StudentModule } from './student/student.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './student/jwt.interceptors';
 import { ProfilComponent } from './layout/profil/profil.component';
+import { NoteComponent } from './layout/note/note.component';
+import { MessageComponent } from './layout/message/message.component';
+import { BycourseComponent } from './layout/courses/bycourse/bycourse.component';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import { ProfilComponent } from './layout/profil/profil.component';
     RegisterComponent,
     SigninComponent,
     StudentBadgeComponent,
-    ProfilComponent
+    ProfilComponent,
+    MessageComponent,
+    NoteComponent,
+    BycourseComponent
   ],
   imports: [
     BrowserModule,

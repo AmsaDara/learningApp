@@ -16,7 +16,7 @@
       <mat-card-actions>	
       <button 
         mat-raised-button 
-        color="primary">Accéder</button> </mat-card-actions>
+        color="primary" [routerLink]='["/courses",course._id]'>Accéder</button> </mat-card-actions>
       <mat-card-footer> Professeur : {{course.teacher}}</mat-card-footer>
       </mat-card>
       

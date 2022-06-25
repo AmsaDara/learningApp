@@ -18,7 +18,10 @@ export class CourseService {
   addCourse(course:ICourse):Observable<ICourse>{
       return this.http.post(`${environment.BASE_API_URI}/courses`,course) as Observable<ICourse>
   }
-
+  
+  getCourseById(id: string):Observable<any>{
+    return this.http.get(`${environment.BASE_API_URI}/courses/${id}`)  as Observable<ICourse[]>
+  }
 
   removeCourse(course:ICourse): Observable<any>{
      return this.http.delete(`${environment.BASE_API_URI}/courses/${course._id}`)

@@ -52,7 +52,16 @@ export class HeaderComponent implements OnInit{
     this.router.navigate(['/profil'])
     
   }
-  
+  message(): void {
+    //console.log('Your identifiant ');
+    this.router.navigate(['/messagePersonel'])
+    
+  }
+  note(): void {
+    //console.log('Your identifiant ');
+    this.router.navigate(['/mesnotes'])
+    
+  }
 
   
 

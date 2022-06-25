@@ -11,10 +11,12 @@ import { first } from 'rxjs';
   styleUrls: ['./signin.component.scss']
 })
 export class SigninComponent implements OnInit {
-
+  
+  
   loginForm = this.fb.group({
     email: ['', Validators.required],
     password: ['', Validators.required],
+    // rememberMe: [false]
   });
 
   constructor(
@@ -23,13 +25,20 @@ export class SigninComponent implements OnInit {
     private snackBar:MatSnackBar,
     private router:Router,
     private route$:ActivatedRoute) {}
+  
+    Password(){
+      this.router.navigateByUrl('forgot');
+    }
+    signUp(){
+      this.router.navigateByUrl('register');
+    }
 
     onSubmit(): void {
       this.authenticationService.login(this.loginForm.value.email,this.loginForm.value.password)
       .pipe(first())
       .subscribe({
         next:(res)=>{
-          this.router.navigate(['courses']);
+          this.router.navigate(['/courses']);
           this.snackBar.open("Logged in Successufully",'Close')
         },
         error:(error)=>{
@@ -37,6 +46,9 @@ export class SigninComponent implements OnInit {
         },
         complete:()=>{}
       })
+      
+      
+      
     }
 
   ngOnInit(): void {

@@ -18,13 +18,14 @@ const addNewCourse = (Course) => async (course) =>{
     }
 };
 
-const getNonFeatureCourse = (Course)=>async ()=>{
+const courseId = (Course)=>async (id)=>{
+    //console.log(id);
     try {
-        const result = await Course.find({'featured':false});
+        const result = await Course.findById(id);
         if(result){
             return({
                 status:'success',
-                message:'All non Featured Courses',
+                message:'content of a course by its identifier',
                 payload:result
             })
         }
@@ -56,10 +57,12 @@ const getFeaturedCourse = (Course)=>async ()=>{
     }
 }
 
+
+
 module.exports = (Course)=>{
     return({
         addNewCourse:addNewCourse(Course),
-        getNonFeatureCourse:getNonFeatureCourse(Course),
+        courseId:courseId(Course),
         getFeaturedCourse:getFeaturedCourse(Course),
         //getCourseById : getCourseById(Course),
         //updateCourse: updateCourse(Course),

@@ -15,6 +15,8 @@ import { MaterialModule } from '../shared/material/materials.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ProfilComponent } from './profil/profil.component';
+import { MessageComponent } from './message/message.component';
+import { NoteComponent } from './note/note.component';
 
 
 
@@ -37,6 +39,9 @@ import { ProfilComponent } from './profil/profil.component';
    // CalendarEventComponent
   
     //ProfilComponent
+  
+    //MessageComponent,
+    //NoteComponent
   ],
   imports: [
     CommonModule,

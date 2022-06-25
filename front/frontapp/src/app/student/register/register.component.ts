@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { StudentService } from '../student.service';
 import {MatSnackBar} from '@angular/material/snack-bar'
 import { ActivatedRoute, Router } from '@angular/router';
@@ -11,21 +11,39 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
   
+  showRegisterForm:boolean = true;
+  showVerificationForm:boolean = false;
+  
   registerForm = this.fb.group({
     fullusername:['',Validators.required],
     email: ['', Validators.required],
     password: ['', Validators.required],
+    //confirmPassword: ['', Validators.required],
+    
   });
-
+  
   constructor(
     private fb: FormBuilder, 
     private studentService:StudentService, 
     private snackBar:MatSnackBar,
     private router:Router,
-    private route$:ActivatedRoute) { }
+    private route$:ActivatedRoute,) { }
 
   ngOnInit(): void {
-  }
+    
+      }
+  
+  // // matchingPasswords() {
+  // //   if (this.AC.get('password') && this.AC.get('confirmPassword')) {
+  // //     const password = this.registerForm.value.password;
+  // //     const confirmPassword = this.registerForm.value.confirmPassword;
+  // //     if (password !== confirmPassword) {
+  // //       this.registerForm.value.confirmPassword.setErrors({matchingPasswords: true});
+  // //     } else {
+  // //       return ;
+  // //     }
+  // //   }
+  // // }
   
   onSubmit(): void {
     this.studentService.registerStudent(this.registerForm.value).subscribe({
@@ -45,5 +63,13 @@ export class RegisterComponent implements OnInit {
       complete:()=>{}
     })
   }
+  
+  
+  
+  backtoRegister(){
+    this.showRegisterForm = true;
+    this.showVerificationForm = false;
+  }
+
 
 }
