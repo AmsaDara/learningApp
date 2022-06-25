@@ -1,4 +1,17 @@
 <app-page-header>
-  
+  <h2>
+    {{currentCourse.title}}
+  </h2>
 </app-page-header>
-<pre><code>{{currentCourse | json}}</code></pre>
+<div>
+<div>
+    <div>
+        <img [src]="currentCourse.cover" alt="cover">
+    </div>
+    <p>
+        {{currentCourse.description}}
+    </p>
+</div>
+
+</div>
+

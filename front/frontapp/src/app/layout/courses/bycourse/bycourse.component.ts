@@ -33,7 +33,7 @@ export class BycourseComponent implements OnInit {
       error: (error) => console.log(error),
     });
   }
-
+   
   // this.activateRoute.params.subscribe(data=> {
   //   this.courseId = data['id'];
   //   console.log(this.courseId);
