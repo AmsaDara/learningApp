@@ -3,7 +3,7 @@ const { validate } = require('../datalayer/models/student.schema');
 const router = express.Router();
 const Student = require('../datalayer/models/student.schema');
 const studentService = require('../services/student.service')(Student);
-
+const validateStudent = require('../helpers/student.validations').validateStudent
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.json({user:'Ok'});
@@ -26,6 +26,15 @@ router.post('/authenticate', async function (req,res,next) {
     } catch (error) {
       next(error)
     }
+});
+
+router.get('/allStudent',validateStudent, async function (req,res,next) {
+  try {
+    let response = await studentService.getAllStudent();
+    res.json(response);
+  } catch (error) {
+    next(error)
+  }
 });
 
 module.exports = router;

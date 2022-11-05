@@ -2,6 +2,18 @@ const mongoose=require('mongoose');
 
 const Schema= mongoose.Schema;
 
+// const chapitreSchema = new ({
+//     name: {
+//         type: String,
+//         trim: true,
+//         require: [true, 'name is required']
+//     },
+//     contenue: {
+//         type: String,
+//         trim:true,
+//     }
+// })
+
 const CourseSchema = new Schema ({
     title: {
         type: String,
@@ -23,8 +35,21 @@ const CourseSchema = new Schema ({
     featured: {
         type: Boolean,
         default: false
-    }
-}, {
+    },
+    
+    // chapitre: [{
+    //     name: {
+    //         type: String,
+    //         trim: true,
+    //         require: [true, 'name is required']
+    //     },
+    //     contenue: {
+    //         type: String,
+    //         trim:true,
+    //     }
+    // }],
+},
+     {
     timestamps: true
 });
 

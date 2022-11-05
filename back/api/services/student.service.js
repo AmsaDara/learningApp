@@ -55,6 +55,25 @@ const authenticate = Student => async (email,password)=>{
     }
 }
 
+const getAllStudent = (Student) => async()=>{
+    try {
+        const result = await Student.find();
+        if(result){
+            return({
+                status:'success',
+                message:'All Student',
+                payload:result
+            })
+        }
+    } catch (error) {
+        return({
+            status:'fail',
+            message:'Sorry',
+            payload: error
+        });
+    }
+}
+
 const getStudentById = Student => async(id)=>{
     
 }
@@ -67,6 +86,7 @@ module.exports = (Student)=>{
     return({
         register:register(Student),
         authenticate: authenticate(Student),
+        getAllStudent:getAllStudent(Student),
         getStudentById : getStudentById(Student),
         updateStudent: updateStudent(Student),
     });
