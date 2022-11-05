@@ -20,7 +20,7 @@ const routes: Routes = [
   {
     path: '',
     //pathMatch: 'full',
-    //redirectTo: 'home'
+    //redirectTo: 'home',
     component: SigninComponent
   },
   {
@@ -47,7 +47,7 @@ const routes: Routes = [
       },
       {
         path: 'courses',
-        component: CoursesComponent,   
+        component: ParticipantsComponent,   
         canActivate:[AuthGuard]
       },
       {
@@ -60,7 +60,7 @@ const routes: Routes = [
       },
       {
         path: 'participants',
-        component: ParticipantsComponent,
+        component: CoursesComponent,
         canActivate:[AuthGuard]
       },
       {
@@ -91,6 +91,8 @@ const routes: Routes = [
       
     ]
   },
+  
+  
   {
     path: '',
     component: NavComponent,

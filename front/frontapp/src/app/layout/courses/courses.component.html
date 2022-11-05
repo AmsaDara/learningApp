@@ -1,27 +1,20 @@
-<app-page-header icon="cast_for_education">
-    <h2>All Courses</h2>
+<!-- Warning ici c'est le component des participants -->
+<app-page-header icon="group">
+  <h2>Participants</h2>
 
-    <button routerLink="/home" mat-flat-button color="primary" class="action">
-      <mat-icon class="mr-2">home</mat-icon>
-      <span>Back deshboard</span>
-    </button>
-  </app-page-header>
-  
-  <!-- <pre><code>{{courses | json}}</code></pre> -->
+  <button routerLink="/courses" mat-flat-button color="primary" class="action">
+    <mat-icon class="mr-2">cast_for_education</mat-icon>
+    <span>Go courses</span>
+  </button>
+</app-page-header>
 
-  <div class="flex-container" style="padding: 0 20px">
-    <mat-card *ngFor="let course of courses" class="card">
-      <mat-card-title>{{course.title}}</mat-card-title>
-      <mat-card-subtitle>Progression du cours</mat-card-subtitle>
-      <mat-card-content> {{course.description}} </mat-card-content>
-      <img mat-card-image [src]="course.cover">
-      <mat-card-actions>	
-      <button 
-        mat-raised-button 
-        color="primary" [routerLink]='["/courses",course._id]'>Accéder</button> </mat-card-actions>
-      <mat-card-footer> Professeur : {{course.teacher}}</mat-card-footer>
-      </mat-card>
-      
-  </div>
-  <p>Nombres de Cour(s):{{courses?.length}}</p>
-  
+<div style="padding: 0 20px">
+  Liste des participants...
+</div>
+
+
+
+
+
+
+<!-- <pre><code>{{courses | json}}</code></pre> -->

@@ -2,7 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CourseService } from '../courses.service';
 import { ICourse } from '../courses.model';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { Menu } from '../../menu.moddel';
+import { AuthenticateService } from 'src/app/student/authenticate.service';
 @Component({
   selector: 'app-bycourse',
   templateUrl: './bycourse.component.html',
@@ -15,12 +16,17 @@ export class BycourseComponent implements OnInit {
     cover: '',
     teacher: '',
   };
+  currentStudent?: any;
+  subscription: any;
+  panelOpenState: boolean = false;
+  
   //courseToUpdate?:ICourse
   //context : 'ADD' | 'UPDATE' = 'ADD'
   constructor(
     private courseService: CourseService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private authenticateService: AuthenticateService,
   ) {}
 
   ngOnInit() {
@@ -33,6 +39,15 @@ export class BycourseComponent implements OnInit {
       error: (error) => console.log(error),
     });
   }
+   
+   listOfStudent(){
+    this.authenticateService.currentStudent$.subscribe({
+      next: (student) => {
+        this.currentStudent = student
+      }
+    })
+   }
+   
    
   // this.activateRoute.params.subscribe(data=> {
   //   this.courseId = data['id'];
